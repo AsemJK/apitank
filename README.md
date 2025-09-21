@@ -21,3 +21,8 @@ To run the project, you need to have Docker installed on your machine. You can d
    ```bash
    dotnet publish --os linux --arch x64 -p:PublishProfile=DefaultContainer -c Release
    ```
+This will create docker image with the name `apitank:latest`
+1. Type the following command to run the docker image
+   ```bash
+   docker run -d -p 8003:80 --name apitank --network="host" apitank:latest
+   ```
