@@ -15,3 +15,9 @@ To run the project, you need to have Docker installed on your machine. You can d
    ```
 4. The API will be available at `http://localhost:8003` and Redis will be available at `127.0.0.1:6379`.
 
+## Another way to run the project as a container on docker using cmd
+1. Open a terminal and navigate to the project directory
+1. Type the following command to build the docker image
+   ```bash
+   dotnet publish --os linux --arch x64 -p:PublishProfile=DefaultContainer -c Release
+   ```
