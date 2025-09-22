@@ -40,9 +40,9 @@ Note: You can put the configuration in .csproj file to avoid typing the long com
         <ContainerBuildArgs></ContainerBuildArgs>
         <ContainerFamily>jammy-chiseled</ContainerFamily>
     </PropertyGroup>
-    ```
+```
 ContainerFamily is an MSBuild property used when publishing or building container images directly from your project (without writing a Dockerfile).
 It tells the .NET SDK which base container image family to use when it generates the container.
 jammy → refers to Ubuntu 22.04 (Jammy Jellyfish).
-chiseled → refers to Microsoft’s chiseled Ubuntu images, which are very slim, minimal images hardened for production.
+chiseled → refers to Microsoft’s chiseled Ubuntu images, which are **very slim**, minimal images hardened for production.
 (Much smaller than full Ubuntu, great for security and performance.)
