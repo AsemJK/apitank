@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace apitank.Controllers
@@ -21,6 +22,17 @@ namespace apitank.Controllers
                 Summary = Summaries[Random.Shared.Next(Summaries.Length)]
             })
             .ToArray();
+        }
+        [HttpGet(Name = "test-1")]
+        public Results<Ok, Conflict> Test1()
+        {
+            var rng = new Random();
+            if (rng.Next(1, 10) > 5)
+            {
+                return TypedResults.Ok();
+            }
+            return TypedResults.Conflict();
+
         }
     }
 }
